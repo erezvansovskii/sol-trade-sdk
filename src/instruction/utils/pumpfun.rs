@@ -458,7 +458,7 @@ pub fn resolve_creator_vault_for_ix_with_fee_sharing(
     }
 
     if *creator == Pubkey::default() {
-        return None;
+        return Some(phantom_default_creator_vault());
     }
 
     get_creator_vault_pda(creator)
